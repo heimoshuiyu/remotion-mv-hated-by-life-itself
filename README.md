@@ -1,15 +1,14 @@
 # Remotion video
 
-<p align="center">
-  <a href="https://github.com/remotion-dev/logo">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-dark.gif">
-      <img alt="Animated Remotion Logo" src="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-light.gif">
-    </picture>
-  </a>
-</p>
+## Description
 
-Welcome to your Remotion project!
+每一拍都触动内心的曲子，灰白流动的形式的歌词，在绝望的最后高喊「活下去」。
+
+- 作词、作曲、编曲：カンザキイオリ
+- 演唱：初音ミク
+- 本家 Youtube: <https://www.youtube.com/watch?v=0HYm60Mjm0k>
+- mylist/45260401
+- 翻译 [竹子](https://www.pixnet.net/pcard/chiku138): [【中日歌詞】カンザキイオリ / 初音ミク - 命に嫌われている。](https://chiku138.pixnet.net/blog/post/180113661-%E3%80%90%E4%B8%AD%E6%97%A5%E6%AD%8C%E8%A9%9E%E3%80%91%E3%82%AB%E3%83%B3%E3%82%B6%E3%82%AD%E3%82%A4%E3%82%AA%E3%83%AA---%E5%88%9D%E9%9F%B3%E3%83%9F%E3%82%AF---%E5%91%BD)
 
 ## Commands
 
