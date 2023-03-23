@@ -1,0 +1,17 @@
+kind: pipeline
+type: docker
+name: default
+
+clone:
+  depth: 1
+
+steps:
+  - name: render
+    image: node:19
+    commands:
+      - sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
+      - apt update
+      - apt install -y ffmpeg
+      - apt install -y chromium
+      - yarn install --forzen-lockfile
+      - yarn build

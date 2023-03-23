@@ -1,4 +1,9 @@
 name: Render video
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
 jobs:
   render:
     name: Render video
@@ -9,10 +14,7 @@ jobs:
       - run: sudo apt update
       - run: sudo apt install ffmpeg
       - run: npm i
-      - run: echo $WORKFLOW_INPUT > input-props.json
-        env:
-          WORKFLOW_INPUT: ${{ toJson(github.event.inputs) }}
-      - run: npm run build"
+      - run: npm run build
       - uses: actions/upload-artifact@v2
         with:
           name: out.mp4

@@ -1,5 +1,7 @@
 # Remotion video
 
+[![Render video](https://github.com/heimoshuiyu/remotion-mv-hated-by-life-itself/actions/workflows/render-video.yml/badge.svg)](https://github.com/heimoshuiyu/remotion-mv-hated-by-life-itself/actions/workflows/render-video.yml)
+
 ## Description
 
 每一拍都触动内心的曲子，灰白流动的形式的歌词，在绝望的最后高喊「活下去」。
