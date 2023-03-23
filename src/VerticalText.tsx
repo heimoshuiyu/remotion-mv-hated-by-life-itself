@@ -7,6 +7,8 @@ import {
 	interpolate,
 } from 'remotion';
 
+import {loadFont} from '@remotion/google-fonts/NotoSerifTC';
+
 type Props = {
 	text: string;
 	fontSize?: number;
@@ -26,6 +28,7 @@ const VerticalText: React.FC<Props> = ({
 	y,
 	disappear,
 }) => {
+	const {fontFamily} = loadFont('normal', {weights: ['400']});
 	const current = useCurrentFrame();
 	const textArray = Array.from(text);
 	const currentEndIndex = interpolate(
@@ -52,6 +55,7 @@ const VerticalText: React.FC<Props> = ({
 				from={from}
 				durationInFrames={disappear ? disappear - from : 4096}
 				style={{
+					fontFamily,
 					top: `${1080 - y}px`,
 					left: x,
 					width: 'min-content',
@@ -63,7 +67,7 @@ const VerticalText: React.FC<Props> = ({
 					overflow: 'hidden',
 				}}
 			>
-				{textArray.slice(0, currentEndIndex).map((char, index) => (
+				{textArray.slice(0, currentEndIndex).map((char) => (
 					<div
 						style={{
 							width: 'min-content',

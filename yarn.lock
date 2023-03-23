@@ -308,6 +308,13 @@
   dependencies:
     "@typescript-eslint/utils" "5.19.0"
 
+"@remotion/google-fonts@^3.3.78":
+  version "3.3.78"
+  resolved "https://registry.npmmirror.com/@remotion/google-fonts/-/google-fonts-3.3.78.tgz#276c17b1b81c786e0af770d5d4423e4607ca8737"
+  integrity sha512-BThLomOoe/MX2jF+G897yBK60xx9MpVg/D1/d3oUGgpeNGgaWyRafVqdoxYA7Mz9u1L41pFxxk08OJIKLszh0g==
+  dependencies:
+    remotion "3.3.78"
+
 "@remotion/media-utils@3.3.78":
   version "3.3.78"
   resolved "https://registry.npmmirror.com/@remotion/media-utils/-/media-utils-3.3.78.tgz#e7a2f22a184fdd2871126f4b2f90657b10069ba2"

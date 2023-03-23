@@ -12,6 +12,7 @@
   "license": "UNLICENSED",
   "dependencies": {
     "@remotion/cli": "3.3.78",
+    "@remotion/google-fonts": "^3.3.78",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "remotion": "3.3.78"
