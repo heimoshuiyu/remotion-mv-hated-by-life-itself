@@ -28,12 +28,23 @@ const VerticalText: React.FC<Props> = ({
 }) => {
 	const current = useCurrentFrame();
 	const textArray = Array.from(text);
-	const currentEndIndex = ~~(
-		(textArray.length * (current - from)) /
-		(to - from)
+	const currentEndIndex = interpolate(
+		current,
+		[from, to],
+		[0, textArray.length]
 	);
-	const r = random(current - (current % 2));
-	const opacity = interpolate(current, [from, from + 8], [0, 1]);
+	const r = random(current - (current % 3));
+	const duration = to - from;
+	const opacities = textArray.map((_, i) =>
+		interpolate(
+			current,
+			[
+				from + (i * duration) / textArray.length,
+				from + ((i + 1) * duration) / textArray.length,
+			],
+			[0, 1]
+		)
+	);
 	return (
 		<AbsoluteFill>
 			<Sequence
@@ -41,21 +52,38 @@ const VerticalText: React.FC<Props> = ({
 				from={from}
 				durationInFrames={disappear ? disappear - from : 4096}
 				style={{
-					opacity,
 					top: `${1080 - y}px`,
 					left: x,
-					letterSpacing: '0.2em',
-					display: 'flex',
-					flexDirection: 'column',
-					justifyContent: 'flex-end',
 					width: 'min-content',
-					fontSize: `${fontSize}px`,
+					height: 'min-content',
+					display: 'flex',
+					flexDirection: 'row',
 					writingMode: 'vertical-lr',
+					fontSize: `${fontSize}px`,
 					overflow: 'hidden',
 				}}
 			>
-				{textArray.slice(0, currentEndIndex).join('')}
-				{currentEndIndex < text.length && textArray[~~(r * textArray.length)]}
+				{textArray.slice(0, currentEndIndex).map((char, index) => (
+					<div
+						style={{
+							width: 'min-content',
+							height: 'min-content',
+							letterSpacing: '0.2em',
+							margin: 0,
+						}}
+					>
+						{char}
+					</div>
+				))}
+				{currentEndIndex < textArray.length && (
+					<div
+						style={{
+							opacity: opacities[~~currentEndIndex],
+						}}
+					>
+						{textArray[~~(r * textArray.length)]}
+					</div>
+				)}
 			</Sequence>
 		</AbsoluteFill>
 	);
